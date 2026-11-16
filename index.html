@@ -289,8 +289,8 @@ q.addEventListener("input",renderCards);
 renderChips();renderCards();
 
 /* ---------- כניסת צוות: הכלי הנוסף מוצפן ונפתח רק עם קוד הגישה ---------- */
-const LOCKED={"salt":"LI59hwUWoEB01EPoh0KPdg==","iv":"mpIYmg6+Hntdnbq7","data":"QjZmHvA5CMHbK3v59IEGfFIadjiVToLutlhRmUklvCn4CtNlcMQ4OR8ABNdu0xcl6viIHeifxSe8do3cdzX4GHJZnDdQVdDZLrv/vMDsVKzQc25QfmLd4h02jQ2nnWXjWUrJGWCUE2QhI7Z4iPidu5skecFVHmxJqi9LYd1ofusjQSSje6mYyB6r8GeczUftS9fE/5PCWOYUnph9g/XuQXxScrQIMEJklsrka+yWJIjTQaUrba9XUyNUZcYTEKWH7Mbm7mhdDSCrqWG+ItSiqQqakPTYggYqVtcQLoLKCimYf1Vs+/6EqsI1nMOxw0cZCJZoMfd1"};
-const b64=x=>Uint8Array.from(atob(x),c=>c.charCodeAt(0));
+const LOCKED={"salt":"IZH7lmY4FA4gq3yUsP+MOw==","iv":"01+bOEmV6CMNcAaY","data":"/RlJXmuTYvJYkA4UMeH0OoxbALxfacdEbJwzsJC6gmjScAFNJV47X/kxfGRlVK6WRuUZTwu5Oquamn/toPOpynM0TgCunvCmds5ooZph688//pbUqKfuIsqt9D+B5+NErqbUQHSD1SK+kk+V/d89XZU+HTNz7dwVhkUvOxrPiOHbS+oYVeI340hp5ygywkLb8+29kLQihBAgLE0+w2YXHBdeYLZfMeFDtG7ldRP6BlY90KwHaXOVwfUvQETvuhkVLm2Zmv20OlCqCMxnUQ=="};
+  const b64=x=>Uint8Array.from(atob(x),c=>c.charCodeAt(0));
 async function decryptTool(pw){
   const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
   const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b64(LOCKED.salt),iterations:200000,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
