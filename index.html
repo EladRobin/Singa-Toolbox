@@ -289,6 +289,8 @@ q.addEventListener("input",renderCards);
 renderChips();renderCards();
 
 /* ---------- כניסת צוות: הכלי הנוסף מוצפן ונפתח רק עם קוד הגישה ---------- */
+  /* ---------- סיסמה : Singa2026! ---------- */
+
 const LOCKED={"salt":"IZH7lmY4FA4gq3yUsP+MOw==","iv":"01+bOEmV6CMNcAaY","data":"/RlJXmuTYvJYkA4UMeH0OoxbALxfacdEbJwzsJC6gmjScAFNJV47X/kxfGRlVK6WRuUZTwu5Oquamn/toPOpynM0TgCunvCmds5ooZph688//pbUqKfuIsqt9D+B5+NErqbUQHSD1SK+kk+V/d89XZU+HTNz7dwVhkUvOxrPiOHbS+oYVeI340hp5ygywkLb8+29kLQihBAgLE0+w2YXHBdeYLZfMeFDtG7ldRP6BlY90KwHaXOVwfUvQETvuhkVLm2Zmv20OlCqCMxnUQ=="};
   const b64=x=>Uint8Array.from(atob(x),c=>c.charCodeAt(0));
 async function decryptTool(pw){
